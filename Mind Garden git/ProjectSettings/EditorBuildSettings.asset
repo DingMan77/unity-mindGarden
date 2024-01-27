@@ -13,5 +13,5 @@ EditorBuildSettings:
     guid: da658484271ec492ebe204d7f419cb45
   - enabled: 1
     path: Assets/Scenes/Game_Duck.unity
-    guid: 548fe18495a5d40cba64515b395b6e11
+    guid: 205d2e0b9ae194b70aa7560a20d56f53
   m_configObjects: {}

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Text questionText; // Text for the question
     public InputField answerInput; // Input field for the answer
     public Button submitButton; // Button to submit the answer
+    public GameObject feedbackPanel; // Panel containing the feedback
     public Text feedbackText; // Text to display feedback
     public GameObject levelCompletePanel; // Panel to show on level completion
     public GameObject levelFailPanel; // Panel to show on level failure
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
     void HideAllPanels()
     {
         questionPanel.SetActive(false);
+        feedbackPanel.SetActive(false);
         levelCompletePanel.SetActive(false);
         levelFailPanel.SetActive(false);
         gameOverPanel.SetActive(false);
@@ -152,6 +154,7 @@ public class GameManager : MonoBehaviour
     void CheckAnswer()
     {
         int playerAnswer;
+        feedbackPanel.SetActive(true);
         if (int.TryParse(answerInput.text, out playerAnswer))
         {
             bool isCorrect = false;
@@ -168,7 +171,7 @@ public class GameManager : MonoBehaviour
             {
                 feedbackText.text = "Correct Answer!";
                 feedbackText.color = Color.green;
-                levelCompletePanel.SetActive(true); // Show level completion panel
+                //levelCompletePanel.SetActive(true); // Show level completion panel
             }
             else
             {
@@ -180,11 +183,11 @@ public class GameManager : MonoBehaviour
 
                 if (playerLives <= 0)
                 {
-                    gameOverPanel.SetActive(true); // Show game over panel
+                    //gameOverPanel.SetActive(true); // Show game over panel
                 }
                 else
                 {
-                    levelFailPanel.SetActive(true); // Show level fail panel with retry and end game options
+                    //levelFailPanel.SetActive(true); // Show level fail panel with retry and end game options
                 }
             }
         }

@@ -91,9 +91,6 @@ public class GameManager : MonoBehaviour
         topBarPanel.SetActive(false);
         questionPanel.SetActive(false);
         feedbackPanel.SetActive(false);
-        //levelCompletePanel.SetActive(false);
-        //levelFailPanel.SetActive(false);
-        //gameOverPanel.SetActive(false);
         dialoguePanel.SetActive(false);
     }
 
@@ -110,12 +107,20 @@ public class GameManager : MonoBehaviour
 
     void StartLevel(int level)
     {
+        questionPanel.SetActive(false);
+        feedbackPanel.SetActive(false);
+        answerInput.text = "";
         currentLevel = level;
         spawner.maxSpeed = duckSpeedRanges[level - 1];
         roundTime = timeLimits[level - 1];
         //playerLives = 3; // Reset lives at the start of each level
         levelText.text = "Level " + currentLevel;
         lifeText.text = "Lives: " + playerLives;
+        // Reset duck counts
+        spawner.countLeftToRight = 0;
+        spawner.countRightToLeft = 0;
+        questionPanel.SetActive(false); // Hide the question panel
+        spawner.enabled = true; // Enable the duck spawner
         StartCoroutine(StartRound());
     }
 
@@ -124,8 +129,6 @@ public class GameManager : MonoBehaviour
         if (currentLevel < timeLimits.Length)
         {
             playerLives = 3; // Reset lives at the start of each level
-            questionPanel.SetActive(false); // Hide the question panel
-            spawner.enabled = true; // Enable the duck spawner
             StartLevel(currentLevel + 1);
         }
         else
@@ -138,8 +141,6 @@ public class GameManager : MonoBehaviour
     {
         if (playerLives > 0)
         {
-            questionPanel.SetActive(false); // Hide the question panel
-            spawner.enabled = true; // Enable the duck spawner
             StartLevel(currentLevel);
         }
     }
@@ -205,7 +206,7 @@ public class GameManager : MonoBehaviour
                 playerLives--; // Decrement lives
                 feedbackText.text = "Incorrect Answer. You have " + playerLives + " lives left.";
                 feedbackText.color = Color.red;
-                ShowFeedbackOptions(playerLives > 0, true, isCorrect);
+                ShowFeedbackOptions(false, playerLives > 0, isCorrect);
 
             }
         }

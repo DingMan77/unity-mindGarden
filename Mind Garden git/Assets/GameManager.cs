@@ -8,18 +8,23 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public duckSpawnSciript_new spawner; // Assign this in the inspector
+    public GameObject topBarPanel; // Panel containing the life, level and time
     public Text timerText; // UI Text to display the timer
+    public Text levelText; // Text element to display current level
+    public Text lifeText; // Text element to display left life
     public GameObject questionPanel; // Panel containing the question and input field
     public Text questionText; // Text for the question
     public InputField answerInput; // Input field for the answer
     public Button submitButton; // Button to submit the answer
     public GameObject feedbackPanel; // Panel containing the feedback
     public Text feedbackText; // Text to display feedback
-    public GameObject levelCompletePanel; // Panel to show on level completion
-    public GameObject levelFailPanel; // Panel to show on level failure
-    public GameObject gameOverPanel; // Panel to show when out of lives
+    public Button nextLevelButton; // Button to proceed to next level
+    public Button retryLevelButton; // Button to retry the current level
+    public Button quitGameButton; // Button to quit game
+
+    //public GameObject gameOverPanel; // Panel to show when out of lives
     public GameObject dialoguePanel;
-    public Text levelText; // Text element to display current level
+    
 
     public GameObject dialogueBackground;
     public GameObject gameBackground;
@@ -65,6 +70,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         submitButton.onClick.AddListener(CheckAnswer);
+        nextLevelButton.onClick.AddListener(NextLevel);
+        retryLevelButton.onClick.AddListener(RetryCurrentLevel);
+        quitGameButton.onClick.AddListener(EndGame);
         ShowDialogueBackground();
         HideAllPanels();
         dialoguePanel.SetActive(true);
@@ -80,11 +88,12 @@ public class GameManager : MonoBehaviour
 
     void HideAllPanels()
     {
+        topBarPanel.SetActive(false);
         questionPanel.SetActive(false);
         feedbackPanel.SetActive(false);
-        levelCompletePanel.SetActive(false);
-        levelFailPanel.SetActive(false);
-        gameOverPanel.SetActive(false);
+        //levelCompletePanel.SetActive(false);
+        //levelFailPanel.SetActive(false);
+        //gameOverPanel.SetActive(false);
         dialoguePanel.SetActive(false);
     }
 
@@ -93,9 +102,10 @@ public class GameManager : MonoBehaviour
         // Logic to start or resume the game
         // This could mean enabling player controls, starting timers, etc.
         HideAllPanels(); // Hide UI panels like dialogue box, etc.
+        topBarPanel.SetActive(true);
         spawner.enabled = true;
-        StartLevel(currentLevel);
         ShowGameBackground();
+        StartLevel(currentLevel);
     }
 
     void StartLevel(int level)
@@ -103,15 +113,19 @@ public class GameManager : MonoBehaviour
         currentLevel = level;
         spawner.maxSpeed = duckSpeedRanges[level - 1];
         roundTime = timeLimits[level - 1];
-        playerLives = 3; // Reset lives at the start of each level
+        //playerLives = 3; // Reset lives at the start of each level
         levelText.text = "Level " + currentLevel;
+        lifeText.text = "Lives: " + playerLives;
         StartCoroutine(StartRound());
     }
 
-    public void NextLevel()
+    void NextLevel()
     {
         if (currentLevel < timeLimits.Length)
         {
+            playerLives = 3; // Reset lives at the start of each level
+            questionPanel.SetActive(false); // Hide the question panel
+            spawner.enabled = true; // Enable the duck spawner
             StartLevel(currentLevel + 1);
         }
         else
@@ -120,9 +134,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RetryLevel()
+    void RetryCurrentLevel()
     {
-        StartLevel(currentLevel);
+        if (playerLives > 0)
+        {
+            questionPanel.SetActive(false); // Hide the question panel
+            spawner.enabled = true; // Enable the duck spawner
+            StartLevel(currentLevel);
+        }
     }
 
     IEnumerator StartRound()
@@ -151,10 +170,18 @@ public class GameManager : MonoBehaviour
         AskRandomQuestion(); // Call this method to display a random question
     }
 
+    void ShowFeedbackOptions(bool hasNextLevel, bool canRetry, bool isCorrect)
+    {
+        nextLevelButton.gameObject.SetActive(hasNextLevel && isCorrect);
+        quitGameButton.gameObject.SetActive(true);
+        retryLevelButton.gameObject.SetActive(canRetry && !isCorrect);
+    }
+
     void CheckAnswer()
     {
         int playerAnswer;
         feedbackPanel.SetActive(true);
+
         if (int.TryParse(answerInput.text, out playerAnswer))
         {
             bool isCorrect = false;
@@ -171,24 +198,15 @@ public class GameManager : MonoBehaviour
             {
                 feedbackText.text = "Correct Answer!";
                 feedbackText.color = Color.green;
-                //levelCompletePanel.SetActive(true); // Show level completion panel
+                ShowFeedbackOptions(currentLevel < timeLimits.Length, false, isCorrect);
             }
             else
             {
-                //feedbackText.text = "Incorrect Answer.";
-                //feedbackText.color = Color.red;
                 playerLives--; // Decrement lives
                 feedbackText.text = "Incorrect Answer. You have " + playerLives + " lives left.";
                 feedbackText.color = Color.red;
+                ShowFeedbackOptions(playerLives > 0, true, isCorrect);
 
-                if (playerLives <= 0)
-                {
-                    //gameOverPanel.SetActive(true); // Show game over panel
-                }
-                else
-                {
-                    //levelFailPanel.SetActive(true); // Show level fail panel with retry and end game options
-                }
             }
         }
         else
@@ -198,7 +216,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EndGame()
+    void EndGame()
     {
         // Implement logic to end the game, such as loading the main menu or closing the application
         // For example, to load a main menu scene: SceneManager.LoadScene("MainMenuSceneName");

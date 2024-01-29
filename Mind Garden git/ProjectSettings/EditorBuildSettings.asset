@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Duck.unity
     guid: 205d2e0b9ae194b70aa7560a20d56f53
+  - enabled: 1
+    path: Assets/Scenes/Game_Moles.unity
+    guid: 9f3c19df71f3d44a38f9b566f3dea20a
+  - enabled: 1
+    path: Assets/Scenes/Game_Panda.unity
+    guid: 31e0d3e1d568a6848a33e68bc8b8c4d3
   m_configObjects: {}

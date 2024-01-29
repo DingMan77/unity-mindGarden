@@ -20,10 +20,19 @@ public class GameManager : MonoBehaviour {
   private HashSet<Mole> currentMoles = new HashSet<Mole>();
   private int score;
   private bool playing = false;
+  public static GameManager Instance;
 
+//public GameObject gameOverPanel; // Panel to show when out of lives
+    public GameObject dialoguePanel;
+    
+
+    public GameObject dialogueBackground;
   // This is public so the play button can see it.
   public void StartGame() {
     // Hide/show the UI elements we don't/do want to see.
+    dialogueBackground.SetActive(false);
+
+    dialoguePanel.SetActive(false);
     playButton.SetActive(false);
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
@@ -99,4 +108,13 @@ public class GameManager : MonoBehaviour {
     // Remove from active moles.
     currentMoles.Remove(moles[moleIndex]);
   }
+
+  void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+
+    }
 }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager_Duck : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager_Duck Instance;
 
     public duckSpawnSciript_new spawner; // Assign this in the inspector
     public GameObject topBarPanel; // Panel containing the life, level and time

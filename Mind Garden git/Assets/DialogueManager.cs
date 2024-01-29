@@ -84,7 +84,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            GameManager.Instance.StartGameplay(); // Notify GameManager to start the game
+            GameManager_Duck.Instance.StartGameplay(); // Notify GameManager to start the game
         }
     }
 

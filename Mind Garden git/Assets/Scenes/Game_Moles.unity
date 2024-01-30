@@ -2862,23 +2862,28 @@ MonoBehaviour:
   dialoguePanelContainer: {fileID: 1867772108}
   scrollRect: {fileID: 4679002}
   dialoguePieces:
-  - dialogueText: Hi Daisy
+  - dialogueText: Hi there! I'm your friend Loopy and welcome to our Whack-a-Mole
+      extravaganza! Do you have quick reflexes and a keen eye?
     responses:
-    - Hi!
-    - How are you
-  - dialogueText: Can you share me about one thing that always troubles you?
+    - I sure do!
+    - "Maybe, I\u2019ll try!"
+  - dialogueText: I'm glad you're here! Speaking of challenges, have you ever encountered
+      a situation where you had to overcome a difficulty or trouble? How did you
+      handle it?
     responses:
-    - start to record
-  - dialogueText: I'm sorry to hear that. By the way, are you ready for the upcoming
-      small game designed by me?
+    - Start to record
+  - dialogueText: Thank you for sharing that. It's impressive how we can grow and
+      learn from our challenges. In our game, you'll face a different kind of challenge.
+      Now, let me tell you about our little game here.
     responses:
-    - Tell me how to play please
-    - Yes!
-  - dialogueText: The game is whack a mole and what you need to do is whack as many
-      moles as you can and avoid the bombs. Remeber the pass score for each level
-      is 60, 75 and 80!
+    - I can't wait! What do I need to do?
+    - I'm all set.
+  - dialogueText: "Moles will pop up randomly, and your task is to whack them quickly.
+      But be careful \u2013 there are bombs too! Hitting a mole extends your time
+      and increases the game speed, but hitting a bomb ends the game. Ready to test
+      your reflexes and decision-making under pressure?"
     responses:
-    - start
+    - Start Game
 --- !u!1001 &1828329111
 PrefabInstance:
   m_ObjectHideFlags: 0

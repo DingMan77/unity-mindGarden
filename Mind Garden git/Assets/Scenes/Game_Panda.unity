@@ -1014,7 +1014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &618639548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,20 +1336,28 @@ MonoBehaviour:
   dialoguePanelContainer: {fileID: 1116569348}
   scrollRect: {fileID: 933113824}
   dialoguePieces:
-  - dialogueText: a
+  - dialogueText: Hi there! I'm Panda Hua Hua, your guide for a fun and challenging
+      adventure. Welcome to our 'Spot the Difference' challenge!
     responses:
-    - b
-    - c
-  - dialogueText: aa
+    - Hi Hua Hua!
+    - Nice to meet you!
+  - dialogueText: I'm glad you're here! This challenge is all about observation,
+      which is a beautiful and essential part of life. Have you noticed anything
+      particularly interesting or beautiful around you recently?
     responses:
-    - bb
-  - dialogueText: aaa
+    - Start to record
+  - dialogueText: Wow, that sounds truly intriguing! Thank you for sharing your experience
+      with me. It's amazing what we can discover when we take the time to observe
+      the world around us. Your keen eye for detail will be a great asset in our
+      'Spot the Difference' game. Now, let me tell you about our little game here.
     responses:
-    - bbb
-    - ccc
-  - dialogueText: aaaa
+    - I can't wait!
+    - I'm all set.
+  - dialogueText: In our game, you'll see two almost identical pictures side by side.
+      Your task is to spot the subtle differences between them. There are a few hidden
+      changes, so look closely! Every correct find will earn you points.
     responses:
-    - start
+    - Start Game
 --- !u!4 &763182425
 Transform:
   m_ObjectHideFlags: 0
@@ -1947,7 +1955,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 10}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1116569349
 MonoBehaviour:

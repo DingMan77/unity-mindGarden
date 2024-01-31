@@ -567,7 +567,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 34709268}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769256383}
+        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+        m_MethodName: OnEngergeticClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &34709268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,7 +1007,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 261063656}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769256383}
+        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+        m_MethodName: OnDarkClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &261063656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3640,7 +3664,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1350176903}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1769256383}
+        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+        m_MethodName: OnPeaceClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1350176903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4746,6 +4782,7 @@ GameObject:
   - component: {fileID: 1769256380}
   - component: {fileID: 1769256382}
   - component: {fileID: 1769256381}
+  - component: {fileID: 1769256383}
   m_Layer: 5
   m_Name: color
   m_TagString: Untagged
@@ -4812,6 +4849,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769256379}
   m_CullTransparentMesh: 1
+--- !u!114 &1769256383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769256379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff53cb0c26b048e49f57cf3ce02f7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageForPeace_complex: {fileID: 21300000, guid: e68caecd0037c4b94b0c0a97fbc5dc02, type: 3}
+  imageForEnergetic_complex: {fileID: 21300000, guid: 2d13948a4a5bc436292a7a8106eaa596, type: 3}
+  imageForDark_complex: {fileID: 21300000, guid: 1b64a12c57b534786be594184efb6cd0, type: 3}
+  imageForPeace_middle: {fileID: 21300000, guid: 7b53be705dfb04c2598180ac2d77b11a, type: 3}
+  imageForEnergetic_middle: {fileID: 21300000, guid: d1ca7727180cb448aa8e919f45c010cb, type: 3}
+  imageForDark_middle: {fileID: 21300000, guid: d5eec4d86a7604786a5518ffc4ac5241, type: 3}
+  imageForPeace_easy: {fileID: 21300000, guid: e9cbc9f240dae405789b0f2177f0567e, type: 3}
+  imageForEnergetic_easy: {fileID: 21300000, guid: d1ca7727180cb448aa8e919f45c010cb, type: 3}
+  imageForDark_easy: {fileID: 21300000, guid: 62186c5d849db42bf99ec49bbf5911d6, type: 3}
 --- !u!1 &1793797049
 GameObject:
   m_ObjectHideFlags: 0

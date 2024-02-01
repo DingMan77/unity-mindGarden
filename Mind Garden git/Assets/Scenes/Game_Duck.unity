@@ -308,7 +308,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Thanks for your kind help! Thats really amazing! Last thing, can you
         pick dress me up by selecting a color palette for me, since I don\u2019t
-        want to be black and white any more!"
+        want to be black and white any more!!!!"
       objectReference: {fileID: 0}
     - target: {fileID: 4757626030559013817, guid: f637866eadc4743999f0dcbf5bd05da2, type: 3}
       propertyPath: m_Color.b

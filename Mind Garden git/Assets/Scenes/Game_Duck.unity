@@ -1671,6 +1671,7 @@ MonoBehaviour:
   retryLevelButton: {fileID: 1286931819}
   quitGameButton: {fileID: 215271664}
   dialoguePanel: {fileID: 605653724}
+  colorPanel: {fileID: 1762293281}
   dialogueBackground: {fileID: 1793797049}
   gameBackground: {fileID: 1281726482}
   currentLevel: 1

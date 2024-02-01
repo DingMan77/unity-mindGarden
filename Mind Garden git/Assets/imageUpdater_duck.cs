@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class imageUpdater_duck : MonoBehaviour
+public class ImageUpdater_duck : MonoBehaviour
 {
-    public static imageUpdater_duck Instance;
-    public Image panelImage; // Assign this in the inspector
+    public static ImageUpdater_duck Instance;
+    public static Sprite SelectedImage { get; set; }
+    public Image panelImage;
+    public GameObject colorImage_duck;
 
     void Awake()
     {
@@ -19,9 +21,44 @@ public class imageUpdater_duck : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        HideImage(); // Initially hide the image
+        //colorImage_duck.SetActive(false);
     }
-    public void UpdatePanelImage(Sprite newImage)
+    void Start()
     {
-        panelImage.sprite = newImage;
+        if (panelImage != null && SelectedImage != null)
+        {
+            //colorImage_duck.SetActive(true);
+            panelImage.sprite = SelectedImage;
+            ShowImage();
+        }
     }
+
+    public void HideImage()
+    {
+        if (panelImage != null) panelImage.enabled = false; // Hide the Image component
+    }
+
+    public void ShowImage()
+    {
+        if (panelImage != null) panelImage.enabled = true; // Show the Image component
+    }
+
+    //public void SetPanelImage(Image newPanelImage)
+    //{
+    //    panelImage = newPanelImage;
+    //}
+
+    //public void UpdatePanelImage(Sprite newImage)
+    //{
+    //    if (panelImage != null)
+    //    {
+    //        //colorImage_duck.SetActive(true);
+    //        panelImage.sprite = newImage;
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Panel image component not assigned.");
+    //    }
+    //}
 }

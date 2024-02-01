@@ -17,19 +17,23 @@ public class ColorButtonHandler_duck : MonoBehaviour
 
     public void OnPeaceClicked()
     {
-        imageUpdater_duck.Instance.UpdatePanelImage(imageForPeace_complex);
+        //Debug.Log($"ImageUpdater_duck Instance: {ImageUpdater_duck.Instance}");
+        ImageUpdater_duck.SelectedImage = imageForPeace_complex;
         SceneManager.LoadScene("SampleScene");
+
     }
 
     public void OnEngergeticClicked()
     {
-        imageUpdater_duck.Instance.UpdatePanelImage(imageForEnergetic_complex);
+        //ImageUpdater_duck.Instance.UpdatePanelImage(imageForEnergetic_complex);
+        ImageUpdater_duck.SelectedImage = imageForEnergetic_complex;
         SceneManager.LoadScene("SampleScene");
     }
 
     public void OnDarkClicked()
     {
-        imageUpdater_duck.Instance.UpdatePanelImage(imageForDark_complex);
+        //ImageUpdater_duck.Instance.UpdatePanelImage(imageForDark_complex);
+        ImageUpdater_duck.SelectedImage = imageForDark_complex;
         SceneManager.LoadScene("SampleScene");
     }
 }

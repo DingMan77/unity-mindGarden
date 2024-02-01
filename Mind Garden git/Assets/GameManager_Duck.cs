@@ -24,6 +24,8 @@ public class GameManager_Duck : MonoBehaviour
 
     //public GameObject gameOverPanel; // Panel to show when out of lives
     public GameObject dialoguePanel;
+
+    public GameObject colorPanel;
     
 
     public GameObject dialogueBackground;
@@ -72,7 +74,7 @@ public class GameManager_Duck : MonoBehaviour
         submitButton.onClick.AddListener(CheckAnswer);
         nextLevelButton.onClick.AddListener(NextLevel);
         retryLevelButton.onClick.AddListener(RetryCurrentLevel);
-        quitGameButton.onClick.AddListener(EndGame);
+        quitGameButton.onClick.AddListener(startColoring);
         ShowDialogueBackground();
         HideAllPanels();
         dialoguePanel.SetActive(true);
@@ -92,6 +94,7 @@ public class GameManager_Duck : MonoBehaviour
         questionPanel.SetActive(false);
         feedbackPanel.SetActive(false);
         dialoguePanel.SetActive(false);
+        colorPanel.SetActive(false);
     }
 
     public void StartGameplay()
@@ -215,6 +218,11 @@ public class GameManager_Duck : MonoBehaviour
             feedbackText.text = "Please enter a valid number.";
             feedbackText.color = Color.yellow;
         }
+    }
+
+    void startColoring()
+    {
+        colorPanel.SetActive(true);
     }
 
     void EndGame()

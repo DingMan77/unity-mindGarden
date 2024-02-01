@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelController : Singleton<LevelController>
 {
     public List<GameObject> levelList;
@@ -40,5 +40,17 @@ public class LevelController : Singleton<LevelController>
             Debug.Log("You need to spot all differences before enter next level");
         }
         
+    }
+    public void LoadScene()
+    {
+        // var countdownTimer = TimerManager.Instance.GetComponent<CountdownTimer>();
+        // if(sceneName != "SampleScene"){
+        //     countdownTimer.PauseTimer();
+        // }else{
+        //     PlayerPrefs.SetFloat("TimeRemaining", countdownTimer.timeRemaining);
+        //     countdownTimer.ResumeTimer();
+        // }
+        
+        SceneManager.LoadScene("SampleScene");
     }
 }

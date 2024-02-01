@@ -3,8 +3,8 @@ using UnityEngine.UI;
 using TMPro;
 public class CountdownTimer : MonoBehaviour
 {
-    
-    public float timeRemaining = 60f;
+    public float maxTime = 30f;
+    public float timeRemaining;
     [SerializeField] TextMeshProUGUI countdownText;
 
     private bool isTimerPaused = false;
@@ -15,6 +15,8 @@ public class CountdownTimer : MonoBehaviour
         if (PlayerPrefs.HasKey("TimeRemaining"))
         {
             timeRemaining = PlayerPrefs.GetFloat("TimeRemaining");
+        }else{
+            timeRemaining = maxTime;
         }
 
         UpdateUI();
@@ -28,14 +30,12 @@ public class CountdownTimer : MonoBehaviour
 
             if(timeRemaining > 0){
                 timeRemaining -= Time.deltaTime;
-            }else if(timeRemaining <= 0){
-                timeRemaining = 0;
-    
+            }else{
+                timeRemaining = 30;
+                Debug.Log("Times out");
             }
 
-            int minutes = Mathf.FloorToInt(timeRemaining / 60);
-            int seconds = Mathf.FloorToInt(timeRemaining % 60);
-            countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            
             UpdateUI();
             
         }
@@ -43,7 +43,15 @@ public class CountdownTimer : MonoBehaviour
 
     void UpdateUI()
     {
-        countdownText.text = Mathf.FloorToInt(timeRemaining).ToString();
+        int minutes = Mathf.FloorToInt(timeRemaining / 60);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60);
+      
+        if(timeRemaining == 0){
+            countdownText.text = string.Format("{0:00}:{1:00}", 0, 0);
+        }else{
+            countdownText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+        
     }
 
     public void PauseTimer()

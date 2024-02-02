@@ -185,15 +185,38 @@ public class RecordingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRecording && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "EndScene")
+        if (isRecording)
         {
-            // Enable the UI button for stopping recording in the End Scene
-            stopRecordingButton.gameObject.SetActive(true);
-        }
-        else
-        {
-            // Disable the UI button for stopping recording in other scenes
-            stopRecordingButton.gameObject.SetActive(false);
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "EndScene")
+            {
+                // Enable the UI button for stopping recording in the End Scene
+                stopRecordingButton.gameObject.SetActive(true);
+
+                // Check if the "TemporaryStopButton" is clicked in the "EndScene"
+                // Check if the "TemporaryStopButton" is clicked in the "EndScene"
+            GameObject temporaryStopButtonObj = GameObject.Find("TemporaryStopButton");
+
+            if (temporaryStopButtonObj != null)
+            {
+                Button temporaryStopButton = temporaryStopButtonObj.GetComponent<Button>();
+
+                if (temporaryStopButton != null)
+                {
+                    temporaryStopButton.onClick.AddListener(() =>
+                    {
+                        // Handle stopping logic here
+                        StopRecordingLogic();
+                    });
+                }
+            }
+
+            }
+            else
+            {
+                // Disable the UI button for stopping recording in other scenes
+                stopRecordingButton.gameObject.SetActive(false);
+            }
         }
     }
+
 }

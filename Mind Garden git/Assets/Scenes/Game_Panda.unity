@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9960785, g: 0.8313726, b: 0.5254902, a: 1}
+  m_Color: {r: 0.41176474, g: 0.72156864, b: 0.58431375, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 195784611}
   - component: {fileID: 195784614}
   - component: {fileID: 195784613}
-  - component: {fileID: 195784612}
+  - component: {fileID: 195784615}
   m_Layer: 5
   m_Name: color
   m_TagString: Untagged
@@ -957,27 +957,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -135}
   m_SizeDelta: {x: 1920, y: 270}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &195784612
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195784610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fff53cb0c26b048e49f57cf3ce02f7bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageForPeace_complex: {fileID: 21300000, guid: e68caecd0037c4b94b0c0a97fbc5dc02, type: 3}
-  imageForEnergetic_complex: {fileID: 21300000, guid: 2d13948a4a5bc436292a7a8106eaa596, type: 3}
-  imageForDark_complex: {fileID: 21300000, guid: 1b64a12c57b534786be594184efb6cd0, type: 3}
-  imageForPeace_middle: {fileID: 21300000, guid: 7b53be705dfb04c2598180ac2d77b11a, type: 3}
-  imageForEnergetic_middle: {fileID: 21300000, guid: d1ca7727180cb448aa8e919f45c010cb, type: 3}
-  imageForDark_middle: {fileID: 21300000, guid: d5eec4d86a7604786a5518ffc4ac5241, type: 3}
-  imageForPeace_easy: {fileID: 21300000, guid: e9cbc9f240dae405789b0f2177f0567e, type: 3}
-  imageForEnergetic_easy: {fileID: 21300000, guid: d1ca7727180cb448aa8e919f45c010cb, type: 3}
-  imageForDark_easy: {fileID: 21300000, guid: 62186c5d849db42bf99ec49bbf5911d6, type: 3}
 --- !u!114 &195784613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,6 +995,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195784610}
   m_CullTransparentMesh: 1
+--- !u!114 &195784615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195784610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29111706ef84f4a62889510a2374fd8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageForPeace_complex_panda: {fileID: 21300000, guid: abacfb8a10b8849e6843cd2fe7dd40dc, type: 3}
+  imageForEnergetic_complex_panda: {fileID: 21300000, guid: 4fda49321c57d4abcb5abcb6e4e00b4f, type: 3}
+  imageForDark_complex_panda: {fileID: 21300000, guid: b9cc28bc39c594be3a126d515045dcf1, type: 3}
+  imageForPeace_middle_panda: {fileID: 21300000, guid: efcbe0d9d3b2b41fcb6c6aac511f35d5, type: 3}
+  imageForEnergetic_middle_panda: {fileID: 21300000, guid: cc1bdd48682cf4cd89cdbaa7b68e79dd, type: 3}
+  imageForDark_middle_panda: {fileID: 21300000, guid: f415256a046d748909bf2032298413f9, type: 3}
+  imageForPeace_easy_panda: {fileID: 21300000, guid: 611db90a347334d14ab401a659472b48, type: 3}
+  imageForEnergetic_easy_panda: {fileID: 21300000, guid: 57425fd8cda5044ef8991e6ec878c36b, type: 3}
+  imageForDark_easy_panda: {fileID: 21300000, guid: cba1858280d3647eb99a23329776910f, type: 3}
 --- !u!1 &214184219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,6 +1748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBackground: {fileID: 1926490676}
   dialoguePanel: {fileID: 933113821}
+  colorPanel: {fileID: 809571874}
   canvas: {fileID: 300495435}
 --- !u!4 &400605392
 Transform:
@@ -1814,7 +1815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.68182623, g: 0.8184704, b: 0.8867924, a: 1}
+  m_Color: {r: 0.9339623, g: 0.7952317, b: 0.4801976, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1926,8 +1927,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 195784612}
-        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+      - m_Target: {fileID: 195784615}
+        m_TargetAssemblyTypeName: ColorButtonHandler_panda, Assembly-CSharp
         m_MethodName: OnEngergeticClicked
         m_Mode: 1
         m_Arguments:
@@ -2920,7 +2921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.86666673, g: 0.7254902, b: 0.6392157, a: 1}
+  m_Color: {r: 0.7725491, g: 0.67058825, b: 0.6313726, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3370,7 +3371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9607844, g: 0.8745099, b: 0.5764706, a: 1}
+  m_Color: {r: 0.6039216, g: 0.6901961, b: 0.37254903, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3422,7 +3423,7 @@ RectTransform:
   m_GameObject: {fileID: 809571874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1440734503}
@@ -3453,7 +3454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7849bf75ba7ee44a6b8ee30773b54313, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ebb0766a8d56042d79280f16dae70eec, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3724,8 +3725,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 195784612}
-        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+      - m_Target: {fileID: 195784615}
+        m_TargetAssemblyTypeName: ColorButtonHandler_panda, Assembly-CSharp
         m_MethodName: OnDarkClicked
         m_Mode: 1
         m_Arguments:
@@ -4461,7 +4462,9 @@ MonoBehaviour:
   - {fileID: 1286772406}
   - {fileID: 742255508}
   - {fileID: 1394095761}
+  timer: {fileID: 820419960}
   LevelIndex: 0
+  colorPanel: {fileID: 809571874}
 --- !u!1001 &1008050393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4758,7 +4761,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 988563354}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: startColoring
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5144,8 +5147,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 195784612}
-        m_TargetAssemblyTypeName: ColorButtonHandler_duck, Assembly-CSharp
+      - m_Target: {fileID: 195784615}
+        m_TargetAssemblyTypeName: ColorButtonHandler_panda, Assembly-CSharp
         m_MethodName: OnPeaceClicked
         m_Mode: 1
         m_Arguments:
@@ -5322,7 +5325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.64705884, g: 0.7960785, b: 0.72156864, a: 1}
+  m_Color: {r: 0.5647059, g: 0.73333335, b: 0.72156864, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5432,7 +5435,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 988563354}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: startColoring
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6024,7 +6027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3de69d3573be4c21a4a4dc07c2ea1c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9eac9b43827fe469583e41246706a35f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6053,7 +6056,7 @@ PrefabInstance:
     - target: {fileID: 1845908410559816972, guid: f637866eadc4743999f0dcbf5bd05da2, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b3de69d3573be4c21a4a4dc07c2ea1c4, type: 3}
+      objectReference: {fileID: 21300000, guid: 9eac9b43827fe469583e41246706a35f, type: 3}
     - target: {fileID: 2793061121082147450, guid: f637866eadc4743999f0dcbf5bd05da2, type: 3}
       propertyPath: m_Name
       value: QuestionPanel
@@ -7010,7 +7013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7803922, g: 0.9058824, b: 0.89019614, a: 1}
+  m_Color: {r: 0.15686275, g: 0.76470596, b: 0.6784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7219,7 +7222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9960785, g: 0.86666673, b: 0.80392164, a: 1}
+  m_Color: {r: 0.92549026, g: 0.5019608, b: 0.25882354, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8149,7 +8152,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 988563354}
         m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: startColoring
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8285,7 +8288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.3647059, b: 0.34117648, a: 1}
+  m_Color: {r: 0.882353, g: 0.60784316, b: 0.23137257, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8588,7 +8591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2784314, g: 0.4901961, b: 0.40784317, a: 1}
+  m_Color: {r: 0.30588236, g: 0.62352943, b: 0.2627451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

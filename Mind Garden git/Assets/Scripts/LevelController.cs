@@ -6,14 +6,17 @@ public class LevelController : Singleton<LevelController>
 {
     public List<GameObject> levelList;
     public List<GameObject> popupList;
+    public GameObject timer;
 
     public int LevelIndex;
+    public GameObject colorPanel;
     // private Timer timer; // Create an instance of Timer
     // private void Start()
     // {
     //     // Assuming there is a Timer component attached to the same GameObject as LevelController
     //     timer = GetComponent<Timer>();
     // }
+    
     public void NextLevel(){
         //添加if条件 score - 5 = 0 或者 score - 8 = 0 button才会enabled
         // if(UIController.num - 5 == 0){
@@ -25,6 +28,7 @@ public class LevelController : Singleton<LevelController>
                 }
                 Debug.Log(popupList);
                 popupList[LevelIndex].SetActive(false);
+                levelList[LevelIndex].SetActive(false);
                 //显示指定关卡
                 LevelIndex += 1;
                 levelList[LevelIndex].SetActive(true);
@@ -45,6 +49,19 @@ public class LevelController : Singleton<LevelController>
         // }
         
     }
+
+    public void startColoring()
+    {
+        popupList[0].SetActive(false);
+        popupList[1].SetActive(false);
+        popupList[2].SetActive(false);
+        levelList[0].SetActive(false);
+        levelList[1].SetActive(false);
+        levelList[2].SetActive(false);
+        timer.SetActive(false);
+        colorPanel.SetActive(true);
+    }
+
     public void LoadScene()
     {
         // var countdownTimer = TimerManager.Instance.GetComponent<CountdownTimer>();

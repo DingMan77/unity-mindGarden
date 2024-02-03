@@ -36,13 +36,16 @@ public class DialogueManager_mole : MonoBehaviour
             btn.interactable = false;
         }
         ++currentDialogueIndex;
+        Debug.Log("checkpoint1");
         ShowDialogue(currentDialogueIndex);
     }
 
     void ShowDialogue(int index)
     {
+        Debug.Log("checkpoint1");
         if (index < dialoguePieces.Length)
         {
+            Debug.Log("checkpoint1");
             DialoguePiece piece = dialoguePieces[index];
             GameObject panelInstance = Instantiate(dialoguePanelPrefab, dialoguePanelContainer);
             LayoutRebuilder.ForceRebuildLayoutImmediate(dialoguePanelContainer.GetComponent<RectTransform>());

@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
         //     remainingDuration = Duration;
         // }
      
-        if(UIController.num - 5 == 0){
+        if(UIController.num - 3 == 0 || UIController.num - 8 == 0){
             remainingDuration = Duration;
         }
         

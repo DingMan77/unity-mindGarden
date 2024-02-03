@@ -7,6 +7,7 @@ public class GameManager_Panda : MonoBehaviour
     public static GameManager_Panda Instance;
     public GameObject dialogueBackground;
     public GameObject dialoguePanel;
+    public GameObject colorPanel;
     public Canvas canvas;
     void Awake()
     {
@@ -14,6 +15,7 @@ public class GameManager_Panda : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+        colorPanel.SetActive(false);
 
     }
     // Start is called before the first frame update

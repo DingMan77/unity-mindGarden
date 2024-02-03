@@ -20,7 +20,7 @@ public class DialogueManager_panda : MonoBehaviour
     private int currentDialogueIndex = 0;
 
     private List<GameObject> activeDialoguePanels = new List<GameObject>();
-
+    public Canvas canvas;
     void Start()
     {
         ShowDialogue(currentDialogueIndex);

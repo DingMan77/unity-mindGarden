@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : Singleton<LevelController>
 {
     public List<GameObject> levelList;
+    public List<GameObject> popupList;
 
     public int LevelIndex;
     // private Timer timer; // Create an instance of Timer
@@ -15,16 +16,19 @@ public class LevelController : Singleton<LevelController>
     // }
     public void NextLevel(){
         //添加if条件 score - 5 = 0 或者 score - 8 = 0 button才会enabled
-        if(UIController.num - 5 == 0){
-            if(LevelIndex < levelList.Count - 1){
-                Debug.Log("Next Level");
+        // if(UIController.num - 5 == 0){
+            // if(LevelIndex < levelList.Count - 1){
+                // Debug.Log("Next Level");
                 //关闭全部关卡
                 foreach(var o in levelList){
                     o.SetActive(false);
                 }
+                Debug.Log(popupList);
+                popupList[LevelIndex].SetActive(false);
                 //显示指定关卡
                 LevelIndex += 1;
                 levelList[LevelIndex].SetActive(true);
+                
                 // Reset the timer fill amount
                 // if (timer != null && timer.uiFill != null)
                 // {
@@ -33,12 +37,12 @@ public class LevelController : Singleton<LevelController>
                 //     timer.uiFill.fillAmount = Mathf.InverseLerp(0, timer.Duration, timer.Duration);
                 // }
 
-            }else{
-                Debug.Log("No more level");
-            }
-        }else{
-            Debug.Log("You need to spot all differences before enter next level");
-        }
+            // }else{
+            //     Debug.Log("No more level");
+            // }
+        // }else{
+        //     Debug.Log("You need to spot all differences before enter next level");
+        // }
         
     }
     public void LoadScene()
@@ -50,7 +54,7 @@ public class LevelController : Singleton<LevelController>
         //     PlayerPrefs.SetFloat("TimeRemaining", countdownTimer.timeRemaining);
         //     countdownTimer.ResumeTimer();
         // }
-        
+        UIController.num = 0;
         SceneManager.LoadScene("SampleScene");
     }
 }

@@ -17,8 +17,21 @@ public class ColorButtonHandler_duck : MonoBehaviour
 
     public void OnPeaceClicked()
     {
-        //Debug.Log($"ImageUpdater_duck Instance: {ImageUpdater_duck.Instance}");
-        ImageUpdater_duck.SelectedImage = imageForPeace_complex;
+        Debug.Log("fjasgfkskhfkjs");
+        Debug.Log(GameManager_Duck.HighestLevelPassed);
+        if (GameManager_Duck.HighestLevelPassed == 3) // Assuming level 2 is the middle difficulty
+        {
+            ImageUpdater_duck.SelectedImage = imageForPeace_complex;
+        }
+        if (GameManager_Duck.HighestLevelPassed == 2) // Assuming all three levels passed
+        {
+            ImageUpdater_duck.SelectedImage = imageForPeace_middle;
+        }
+        if (GameManager_Duck.HighestLevelPassed == 1) // Assuming all three levels passed
+        {
+            ImageUpdater_duck.SelectedImage = imageForPeace_easy;
+        }
+
         SceneManager.LoadScene("SampleScene");
 
     }

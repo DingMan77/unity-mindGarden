@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager_Duck : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class GameManager_Duck : MonoBehaviour
 
     public int currentLevel = 1;
     public int playerLives = 3;
+    public static int HighestLevelPassed = 0;
     private float roundTime;
     private bool roundActive;
     private string[] questions = new string[]
@@ -74,7 +76,21 @@ public class GameManager_Duck : MonoBehaviour
         submitButton.onClick.AddListener(CheckAnswer);
         nextLevelButton.onClick.AddListener(NextLevel);
         retryLevelButton.onClick.AddListener(RetryCurrentLevel);
-        quitGameButton.onClick.AddListener(startColoring);
+        //quitGameButton.onClick.AddListener(startColoring);
+
+        quitGameButton.onClick.AddListener(() => {
+            if (currentLevel == 1)
+            {
+                // If the user is still on level 1 (not passed), load SampleScene
+                SceneManager.LoadScene("SampleScene");
+            }
+            else
+            {
+                // Otherwise, invoke the startColoring method
+                startColoring();
+            }
+        });
+
         ShowDialogueBackground();
         HideAllPanels();
         dialoguePanel.SetActive(true);
@@ -129,10 +145,12 @@ public class GameManager_Duck : MonoBehaviour
 
     void NextLevel()
     {
+        
+
         if (currentLevel < timeLimits.Length)
         {
             playerLives = 3; // Reset lives at the start of each level
-            StartLevel(currentLevel + 1);
+            StartLevel(currentLevel);
         }
         else
         {
@@ -202,7 +220,13 @@ public class GameManager_Duck : MonoBehaviour
             {
                 feedbackText.text = "Correct Answer!";
                 feedbackText.color = Color.green;
-                ShowFeedbackOptions(currentLevel < timeLimits.Length, false, isCorrect);
+                if (currentLevel > HighestLevelPassed)
+                {
+                    HighestLevelPassed = currentLevel;
+                }
+                currentLevel++;
+                
+                ShowFeedbackOptions(currentLevel <= timeLimits.Length, false, isCorrect);
             }
             else
             {

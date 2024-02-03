@@ -13,11 +13,14 @@ public class UIController : Singleton<UIController>
     {
         num += 1;
         score.text = num.ToString();
-        if(num == 5){
+        if(num == 3){
             popupList[0].SetActive(true);
         }
-        if(num == 13){
+        if(num == 8){
             popupList[1].SetActive(true);
+        }
+        if(num == 16){
+            popupList[2].SetActive(true);
         }
     }
     

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
   [SerializeField] private List<Mole> moles;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private GameObject nextLevelButton;
   [SerializeField] private GameObject returnToHomeButton;
   [SerializeField] private GameObject retryButton;
+ 
 
   // Hardcoded variables you may want to tune.
   private float startingTime = 30f;
@@ -34,7 +36,9 @@ public class GameManager : MonoBehaviour {
 
   //public GameObject gameOverPanel; // Panel to show when out of lives
   public GameObject dialoguePanel;
-    
+  public Button returnToHome; // Button to quit game
+  public GameObject colorPanel;
+
 
   public GameObject dialogueBackground;
   // This is public so the play button can see it.
@@ -156,12 +160,20 @@ public class GameManager : MonoBehaviour {
     currentMoles.Remove(moles[moleIndex]);
   }
 
-  void Awake()
+
+  void startColoring()
+  {
+      colorPanel.SetActive(true);
+  }
+
+    void Awake()
     {
         if (Instance == null)
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+        returnToHome.onClick.AddListener(startColoring);
+        colorPanel.SetActive(false);
 
     }
   public void NextLevel()

@@ -41,6 +41,10 @@ public class Timer : MonoBehaviour
 
     public void ResetTimer(){
         //添加if条件 score - 5 = 0 或者 score - 8 = 0 button才会enabled
+        // if(UIController.num == 0){
+        //     remainingDuration = Duration;
+        // }
+     
         if(UIController.num - 5 == 0){
             remainingDuration = Duration;
         }

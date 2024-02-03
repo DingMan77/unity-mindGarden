@@ -7,6 +7,7 @@ public class GameManager_Panda : MonoBehaviour
     public static GameManager_Panda Instance;
     public GameObject dialogueBackground;
     public GameObject dialoguePanel;
+    public Canvas canvas;
     void Awake()
     {
         if (Instance == null)
@@ -19,7 +20,8 @@ public class GameManager_Panda : MonoBehaviour
     public void StartGame()
     {
         dialogueBackground.SetActive(false);
-        dialoguePanel.SetActive(false);   
+        dialoguePanel.SetActive(false); 
+        canvas.gameObject.SetActive(true);  
     }
 
     // Update is called once per frame

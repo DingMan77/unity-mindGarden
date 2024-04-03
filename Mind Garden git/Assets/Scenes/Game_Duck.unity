@@ -2333,20 +2333,35 @@ MonoBehaviour:
       officer.
     responses:
     - Hi, Daisy!
-    - good to see you Daisy!
-  - dialogueText: By the way, have you been on any exciting travels lately
+    - Good to see you!
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
+  - dialogueText: By the way, have you had the chance to explore any new places or
+      embark on any adventures recently? I'd love to hear about any experiences you've
+      had, whether it's a quiet afternoon in a park you love, a trip to somewhere
+      new, or even a journey you're dreaming of taking.(Please directly start to
+      share, the system will auto-record your voice))
     responses:
-    - Start to Record
-  - dialogueText: That sounds amazing! Traveling really opens up the world, doesn't
-      it? Now, let me tell you about our little game here.
+    - I finish my sharing
+    isBranchingDialogue: 0
+    isSharingDialogue: 1
+  - dialogueText: Thank you for sharing that with me. It's really insightful to hear
+      how such experiences can shape our perspective, isn't it? Every journey, every
+      moment, holds its unique story. Now, I'd like to introduce a little activity
+      we have here. It's designed to be reflective and engaging, no matter the nature
+      of the experiences you've just shared. Let's explore this together!
     responses:
     - Sure! Tell me more!
     - "I\u2019m ready to play!"
+    isBranchingDialogue: 1
+    isSharingDialogue: 0
   - dialogueText: 'As our duck family crosses the pond, your task is to count how
       many ducks with specific character pass by. It''s important for our travel
       log. Keep your eyes peeled and help me make sure everyone is accounted for! '
     responses:
     - Start Game
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
 --- !u!4 &780181233
 Transform:
   m_ObjectHideFlags: 0

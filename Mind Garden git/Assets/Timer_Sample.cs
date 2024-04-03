@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class Timer_Sample : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -10,13 +11,19 @@ public class Timer_Sample : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if(remainingTime > 0){
             remainingTime -= Time.deltaTime;
+            if(remainingTime < 0.1){
+                Debug.Log("Times out");
+                SceneManager.LoadScene("EndScene");
+            }
+
         }else{
             remainingTime = 30;
   
-            Debug.Log("Times out");
+            // Debug.Log("Times out");
+            
         }
        
         int minutes = Mathf.FloorToInt(remainingTime / 60);

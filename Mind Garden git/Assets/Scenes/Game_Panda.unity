@@ -3154,23 +3154,34 @@ MonoBehaviour:
     responses:
     - Hi Hua Hua!
     - Nice to meet you!
-  - dialogueText: I'm glad you're here! This challenge is all about observation,
-      which is a beautiful and essential part of life. Have you noticed anything
-      particularly interesting or beautiful around you recently?
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
+  - dialogueText: "It\u2019s truly a pleasure to have you here with us today. We\u2019re
+      exploring the theme of observation\u2014a fundamental and enriching aspect
+      of our lives. Could you share if there\u2019s been something around you, perhaps
+      a simple moment, an aspect of nature, or even an interaction? (Please directly
+      to share, the system will auto-record.)"
     responses:
-    - Start to record
-  - dialogueText: Wow, that sounds truly intriguing! Thank you for sharing your experience
-      with me. It's amazing what we can discover when we take the time to observe
-      the world around us. Your keen eye for detail will be a great asset in our
-      'Spot the Difference' game. Now, let me tell you about our little game here.
+    - I finish sharing
+    isBranchingDialogue: 0
+    isSharingDialogue: 1
+  - dialogueText: "It\u2019s fascinating to hear what stands out to you and how you
+      perceive the world around us. Every observation, every detail you\u2019ve noticed,
+      adds depth to our understanding and appreciation of life's complexity. I believe
+      it will enrich your experience with the 'Spot the Difference' game. Let's explore
+      how this game works and see what discoveries await."
     responses:
     - I can't wait!
     - I'm all set.
+    isBranchingDialogue: 1
+    isSharingDialogue: 0
   - dialogueText: In our game, you'll see two almost identical pictures side by side.
       Your task is to spot the subtle differences between them. There are a few hidden
       changes, so look closely! Every correct find will earn you points.
     responses:
     - Start Game
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
   canvas: {fileID: 0}
 --- !u!4 &763182425
 Transform:

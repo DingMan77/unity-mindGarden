@@ -4587,23 +4587,35 @@ MonoBehaviour:
     responses:
     - I sure do!
     - "Maybe, I\u2019ll try!"
-  - dialogueText: I'm glad you're here! Speaking of challenges, have you ever encountered
-      a situation where you had to overcome a difficulty or trouble? How did you
-      handle it?
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
+  - dialogueText: "Could you share a time when you found yourself facing a significant
+      challenge? I\u2019m particularly interested in how you navigated through that
+      period. Your approach might not only reflect your resilience but also provide
+      insights that might help others. (Please directly start to record. The system
+      will auto-record your voice.) "
     responses:
-    - Start to record
-  - dialogueText: Thank you for sharing that. It's impressive how we can grow and
-      learn from our challenges. In our game, you'll face a different kind of challenge.
-      Now, let me tell you about our little game here.
+    - I finish sharing
+    isBranchingDialogue: 0
+    isSharingDialogue: 1
+  - dialogueText: Thank you sincerely for opening up about your experience. It's
+      truly enlightening to see the diverse ways in which we all navigate through
+      life's ups and downs, growing and learning as we go. Now, in a lighter vein,
+      I'd like to introduce a little game we have here. It presents a different sort
+      of challenge, one that I hope you'll find engaging and maybe even a bit fun.
     responses:
     - I can't wait! What do I need to do?
     - I'm all set.
+    isBranchingDialogue: 1
+    isSharingDialogue: 0
   - dialogueText: "Moles will pop up randomly, and your task is to whack them quickly.
       But be careful \u2013 there are bombs too! Hitting a mole extends your time
       and increases the game speed, but hitting a bomb ends the game. Ready to test
       your reflexes and decision-making under pressure?"
     responses:
     - Start Game
+    isBranchingDialogue: 0
+    isSharingDialogue: 0
 --- !u!1 &1778442858
 GameObject:
   m_ObjectHideFlags: 0
